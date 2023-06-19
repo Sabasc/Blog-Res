@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Websit</title>
+    <!--link to css-->
+    <link rel="stylesheet" href="blog.css">
+    <!--box icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Basic styling for the blog posts */
+        .blog-post {
+          margin-bottom: 20px;
+          padding: 10px;
+          border: 1px solid crimson;
+          background-color: #f9f9f9;
+          width:50%;
+          /* display:flex;
+          justify-content: space-between; */
+          align-items: center;
+          float:left;
+          background-image: url("b1.jpg");
+          background-size: cover;
+          /* margin:5px 5px; */
+         
+          
+        }
+      </style>
+   
+                                                         
+</head>
+<body>
+    <!--header-->
+    <header>
+        <!--nav-->
+        <div class="nav container">
+        <!--Logo-->
+        <a href="#" class="logo">Ve<span>Blogs</span></a>
+        <!-- login btn-->
+        <a href="#" class="login">Login</a>
+    </div>
+
+    </header>
+    <!--Home-->
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">The Venom Blogs</h2>
+            <span class="home-subtitle">Your source of great content </span>
+        </div>
+
+    </section>
+    <!--post filter-->
+    <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter='all'>All</span>
+        <span class="filter-item" data-filter='design'>Design</span>
+        <span class="filter-item" data-filter='tech'>Tech</span>
+        <span class="filter-item" data-filter='mobile'>Mobile</span>
+
+
+    </div>
+    <!--posts-->
+    <section class="post container">
+        <!--post box 1-->
+        <div class="post-box">
+            <img src="" alt="" class="post-img">
+        <!-- <h2 class="category">Mobile</h2>
+        <a href="post-page.html" class="post-title">
+            How To create Best UX Design with Adobe XD
+        </a>
+        <span class="post-date"> 12 Feb 2022</span>
+        <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repellendus eaque dolorum rerum suscipit placeat sed nisi aperiam iusto molestiae, impedit voluptatibus officiis laboriosam voluptates.</p> -->
+        
+        
+          
+        <div id="blog-container"> </div> 
+    </section>
+
+    <script>
+        // Array of blog post objects
+        var blogPosts = [
+          {
+            title: "First Blog Post",
+            content: "This is the content of the first blog post.",
+            author: "John Doe"
+          },
+          {
+            title: "Second Blog Post",
+            content: "This is the content of the second blog post.",
+            author: "Jane Smith"
+          },
+          {
+            title: "Third Blog Post",
+            content: "This is the content of the third blog post.",
+            author: "Mike Johnson"
+          },
+          {
+            title: "Third Blog Post",
+            content: "This is the content of the third blog post.",
+            author: "Mike Johnson"
+          }
+        ];
+    
+        // Function to generate HTML for each blog post
+        function generateBlogPostHTML(post) {
+          var blogPostHTML = '<div class="blog-post">' +
+                             '<h2>' + post.title + '</h2>' +
+                             '<p>' + post.content + '</p>' +
+                             '<p>Author: ' + post.author + '</p>' +
+                             '</div>';
+          return blogPostHTML;
+        }
+    
+        // Function to render the blog posts on the website
+        function renderBlogPosts() {
+          var blogContainer = document.getElementById('blog-container');
+    
+          // Clear existing content
+          blogContainer.innerHTML = '';
+    
+          // Loop through the blog posts array and generate HTML for each post
+          for (var i = 0; i < blogPosts.length; i++) {
+            var blogPost = blogPosts[i];
+            var blogPostHTML = generateBlogPostHTML(blogPost);
+            blogContainer.innerHTML += blogPostHTML;
+          }
+        }
+    
+        // Call the renderBlogPosts function to display the blog posts
+        renderBlogPosts();
+      </script>
+
+     <!--link to JS-->
+     <link rel="stylesheet" href="blog.js">
+</body>
+</html>
